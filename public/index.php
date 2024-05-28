@@ -2,8 +2,6 @@
 require '../helpers.php';
 // Database
 require basePath('Database.php');
-$config = require basePath('config/db.php');
-$db = new Database($config);
 // Router
 require basePath('Router.php');
 $router = new Router();
