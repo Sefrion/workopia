@@ -1,0 +1,16 @@
+{
+	"name": "sefrion/workopia",
+	"description": "Job listing website created with vanilla PHP",
+	"authors": [
+		{
+			"name": "Vlad Ilienkov",
+			"email": "ilyenkov96@gmail.com"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"Framework\\": "Framework/",
+			"App\\": "App/"
+		}
+	}
+}
