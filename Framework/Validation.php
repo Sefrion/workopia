@@ -24,7 +24,7 @@ class Validation
   }
 
   /**
-   * Validate an email address
+   * Validate an email adress
    * 
    * @param string $value
    * @return mixed

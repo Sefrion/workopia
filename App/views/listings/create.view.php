@@ -48,7 +48,7 @@
         <input type="text" name="company" placeholder="Company Name" class="w-full px-4 py-2 border rounded focus:outline-none" value="<?= $listing['company'] ?? '' ?>" />
       </div>
       <div class="mb-4">
-        <input type="text" name="address" placeholder="Address" class="w-full px-4 py-2 border rounded focus:outline-none" value="<?= $listing['address'] ?? '' ?>" />
+        <input type="text" name="adress" placeholder="Address" class="w-full px-4 py-2 border rounded focus:outline-none" value="<?= $listing['adress'] ?? '' ?>" />
       </div>
       <div class="mb-4">
         <input type="text" name="city" placeholder="City" class="w-full px-4 py-2 border rounded focus:outline-none" value="<?= $listing['city'] ?? '' ?>" />

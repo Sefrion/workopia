@@ -24,11 +24,22 @@ class ListingController
     ]);
   }
 
+  /**
+   * Show create a listing view
+   *
+   * @return void
+   */
   public function create()
   {
     loadView('listings/create');
   }
 
+  /**
+   * Show a single listing
+   *
+   * @param array $params
+   * @return void
+   */
   public function show($params)
   {
     $id = $params['id'] ?? '';
@@ -57,7 +68,7 @@ class ListingController
    */
   public function store()
   {
-    $allowedFields = ['title', 'description', 'salary', 'tags', 'compaby', 'address', 'city', 'state', 'phone', 'email', 'requirements', 'benefits'];
+    $allowedFields = ['title', 'description', 'salary', 'tags', 'compaby', 'adress', 'city', 'state', 'phone', 'email', 'requirements', 'benefits'];
 
     $newListingData = array_intersect_key($_POST, array_flip($allowedFields));
 
@@ -108,5 +119,34 @@ class ListingController
 
       redirect('/listings');
     }
+  }
+
+  /**
+   * Delete a listing
+   * 
+   * @param array @params
+   * @return void
+   */
+  public function destroy($params)
+  {
+    $id = $params['id'];
+
+    $params = [
+      'id' => $id
+    ];
+
+    $listing = $this->db->query('SELECT * FROM listings WHERE id = :id', $params)->fetch();
+
+    if (!$listing) {
+      ErrorController::notFound('Listing not found');
+      return;
+    }
+
+    $this->db->query('DELETE FROM listings WHERE id = :id', $params);
+
+    // Set flash message
+    $_SESSION['success_message'] = 'Listing deleted successfully';
+
+    redirect('/listings');
   }
 }
