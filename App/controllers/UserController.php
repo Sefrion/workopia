@@ -191,7 +191,7 @@ class UserController
 
     // Set user session
     Session::set('user', [
-      'id' => $user->_id,
+      'id' => $user->id,
       'name' => $user->name,
       'email' => $user->email,
       'city' => $user->city,
