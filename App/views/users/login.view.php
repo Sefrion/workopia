@@ -7,7 +7,7 @@
     <?= loadPartial('errors', [
       'errors' => $errors ?? []
     ]) ?>
-    <form>
+    <form method="POST" action="/auth/login">
       <div class="mb-4">
         <input type="email" name="email" placeholder="Email Address" class="w-full px-4 py-2 border rounded focus:outline-none" />
       </div>
