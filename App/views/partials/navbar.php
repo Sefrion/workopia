@@ -10,8 +10,8 @@ use Framework\Session;
     </h1>
     <nav class="space-x-4">
       <?php if (Session::has('user')) : ?>
-        <p>Welcome, <?= Session::get('user')['name'] ?></p>
         <div class="flex justify-center items-center gap-4">
+          <p>Welcome, <?= Session::get('user')['name'] ?></p>
           <form method="POST" action="/auth/logout">
             <button type="submit" class="text-white inline hover:underline">Logout</button>
           </form>
